@@ -38,9 +38,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO place
     (name, description)
 VALUES
-    ('Nome 1', 'lorem ipsum');
-    ('Nome 2', 'lorem ipsum');
-    ('Nome 3', 'lorem ipsum');
-    ('Nome 4', 'lorem ipsum');
-    ('Nome 5', 'lorem ipsum');
-    ('Nome 5', 'lorem ipsum');
+    ('Nome 1', 'lorem ipsum dolor sit amet constructor'),
+    ('Nome 2', 'lorem ipsum dolor sit amet constructor'),
+    ('Nome 3', 'lorem ipsum dolor sit amet constructor'),
+    ('Nome 4', 'lorem ipsum dolor sit amet constructor'),
+    ('Nome 5', 'lorem ipsum dolor sit amet constructor'),
+    ('Nome 6', 'lorem ipsum dolor sit amet constructor');
