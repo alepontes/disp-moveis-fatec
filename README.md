@@ -1,14 +1,6 @@
 # PlaceList
 Trabalho da disciplina de Dispositivos Móveis da Fatec Dom Evaristo Arns
 
-
-## Subindo o banco
-Rode na raiz do projeto
-```shell
-docker-compose up 
-```
-
-
 ## Features 
 - [ ] Perfil
     - [ ] Login/Logout
