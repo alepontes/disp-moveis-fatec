@@ -35,6 +35,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 -- Add Data
 -- -----------------------------------------------------
+USE placelist
 INSERT INTO place
     (name, description)
 VALUES
