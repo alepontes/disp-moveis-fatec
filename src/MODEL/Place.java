@@ -2,6 +2,7 @@ package MODEL;
 
 public class Place {
 
+    /* FIXME: Mudar id pra INT*/
     private String id;
     private String name;
     private String description;
