@@ -2,6 +2,7 @@ package MODEL;
 
 public class Place {
 
+    /* FIXME: Mudar id pra INT*/
     private String id;
     private String name;
     private String description;
@@ -29,4 +30,14 @@ public class Place {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Place{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
 }

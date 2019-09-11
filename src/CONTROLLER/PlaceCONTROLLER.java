@@ -3,28 +3,45 @@ package CONTROLLER;
 import DAO.PlaceDAO;
 import MODEL.Place;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class PlaceCONTROLLER {
 
+    /* TODO: Tratar erros no controller */
+    /* TODO: Usasr a mesma instancia de DAO para toda conexão */
 
     /** Lista lugar por ID
      * @param idPlace id do lugar
      * @return Place
      * */
-    public Place getById(String idPlace){
+    public Place getById(String idPlace) throws SQLException {
 
-        PlaceDAO placeDAO = new PlaceDAO();
-        return placeDAO.getById(idPlace);
+        Place place;
 
+        PlaceDAO placeDAO = null;
+        try {
+            placeDAO = new PlaceDAO();
+        } catch (SQLException e) {
+            System.out.println("SQLException");
+            //e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException");
+            e.printStackTrace();
+        }
+
+        place =  placeDAO.getById(idPlace);
+
+
+        return place;
     }
 
 
     /** Lista lugares
      * @return Place[]
      * */
-    public Place[] list(){
-
-        PlaceDAO placeDAO = new PlaceDAO();
-        return placeDAO.list();
+    public ArrayList<Place> list() throws SQLException, ClassNotFoundException {
+        return new PlaceDAO().list();
     }
 
 
@@ -32,7 +49,7 @@ public class PlaceCONTROLLER {
      * @param place Objeto Place
      * @return Place
      * */
-    public Place add(Place place){
+    public Place add(Place place) throws SQLException, ClassNotFoundException {
         return new PlaceDAO().add(place);
     }
 
@@ -41,7 +58,7 @@ public class PlaceCONTROLLER {
      * @param place Objeto Place
      * @return Place
      * */
-    public Place[] add(Place place[]){
+    public Place[] add(Place place[]) throws SQLException, ClassNotFoundException {
 
         PlaceDAO placeDAO = new PlaceDAO();
 
@@ -59,7 +76,7 @@ public class PlaceCONTROLLER {
      * @param place Objeto Place
      * @return Place
      * */
-    public Place updade(Place place){
+    public Place updade(Place place) throws SQLException, ClassNotFoundException {
         return new PlaceDAO().updade(place);
     }
 
@@ -67,9 +84,11 @@ public class PlaceCONTROLLER {
     /** Remove lugar
      * @param place Objeto Place
      * @return true|false
+     * @deprecated
      * */
-    public boolean remove(Place place){
-        return new PlaceDAO().remove(place);
+    public boolean DEPRECATED_remove(Place place) throws SQLException, ClassNotFoundException {
+        /* FIXME: Consertar esse metodo*/
+        return false;
     }
 
 
@@ -77,10 +96,8 @@ public class PlaceCONTROLLER {
      * @param idPlace ID do lugar
      * @return true|false
      * */
-    public boolean remove(String idPlace){
-        PlaceDAO placeDAO = new PlaceDAO();
-        Place place = placeDAO.getById(idPlace);
-        return placeDAO.remove(place);
+    public boolean remove(int idPlace) throws SQLException, ClassNotFoundException {
+        return new PlaceDAO().remove(idPlace);
     }
 
 
